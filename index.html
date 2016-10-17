@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>WpテンプレートA</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="container">
+
+    <div id="header">
+    	<div id="rogo"><a href=""><img src="logo.png" width="320px"></a></div>
+        <div id="tel"><h2><img src="telmark.png">0120-01-2345</h2><br><p>（電話受付時間／9：00〜19：00）</p></div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="">ホーム</a></li>
+            <li><a href="">新着情報</a></li>
+            <li><a href="">事業内容</a></li>
+            <li><a href="">会社情報</a></li>
+            <li><a href="">お問合せ</a></li>
+        </ul>
+    </div>
+    
+    <!--<div id="slideshow"><h1><img src="top.jpg" width="928px"></h1></div>-->
+    <div id="hoge">
+        <div id="slideshow">
+            <img src="top1.jpg" width="928px" height="420px">	
+            <img src="top2.jpg" width="928px" height="420px">
+            <img src="top3.jpg" width="928px" height="420px">
+            <img src="top4.jpg" width="928px" height="420px">
+        </div>
+    </div>    
+
+    <script type="text/javascript">
+
+		$(function(){
+			// 設定
+			var $width      = 928; // 横幅
+			var $height     = 420; // 高さ
+			var $interval   = 4000; // 切り替わりの間隔(ミリ秒)
+			var $fade_speed = 1000; // フェード処理の早さ(ミリ秒)
+            
+			$("#slideshow").css({"position":"relative","overflow":"hidden","width":$width,"height":$height});
+			$("#slideshow img").hide().css({"position":"absolute","top":0,"left":0});	
+			$("#slideshow img:first").addClass("active").show();	
+			setInterval(function(){	
+				var $active = $("#slideshow img.active");
+				var $next = $active.next("img").length?$active.next("img"):$("#slideshow img:first");
+				$active.fadeOut($fade_speed).removeClass("active");
+				$next.fadeIn($fade_speed).addClass("active");
+			},$interval);
+		});
+		$('#slideshow img').css({top:50,left:100})
+		$('#slideshow img').css({top:'50%',left:'100%'})
+        
+       
+   
+	</script>
+
+
+    <div id="main">
+    	<div id=contents>
+            <h2>事業内容</h2>
+            <div id="jigyou">
+                <div id="inport">
+                    <div class="photo">
+                        <a href=""><img src="inport.png" width=320px>
+                            <div class="mask">
+                                <div class="caption">INPORT</div>
+                            </div>    
+                        </a>
+                    </div>    
+                    <h3><a href="">海外ブランド販売</a></h3>
+                    <p>記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</p>
+                </div>
+                <div id="notinport">
+                    <div class="photo">
+                    	<a href=""><img src="notinport.png" width=320px>
+                        	<div class="mask">
+                                <div class="caption">EXPORT</div>
+                            </div>
+                        </a>
+                    </div>
+                    <h3><a href="">国内ブランド輸出販売</a></h3>
+                    <p>記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</p>
+                </div>
+            </div>
+            
+            <h2>新着情報</h2>
+            <div id="news">
+                <div id="news01">
+                    <a href=""><img src="news01.png" width=138px></a>
+                    <h5>2016.9.30</h5>
+                    <hr size="1" color="#C8C8C8" style="border-style:dotted">
+                    <p><a href="">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</a></p>
+                </div>
+                <div id="news02">
+                    <a href=""><img src="news02.png" width=138px></a>
+                    <h5>2016.9.30</h5>
+                    <hr size="1" color="#C8C8C8" style="border-style:dotted">
+                    <p><a href="">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</a></p>
+                </div>
+                <div id="news03">
+                    <a href=""><img src="news03.png" width=138px></a>
+                    <h5>2016.9.30</h5>
+                    <hr size="1" color="#C8C8C8" style="border-style:dotted">
+                    <p><a href="">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</a></p>
+                </div>
+                <div id="news04">
+                    <a href=""><img src="news04.png" width=138px></a>
+                    <h5>2016.9.30</h5>
+                    <hr size="1" color="#C8C8C8" style="border-style:dotted">
+                    <p><a href="">記事のタイトルが入ります。記事のタイトルが入ります。記事のタイトルが入ります。</a></p>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar">
+        	<div id="archive">
+            	<h4>新着情報アーカイブ</h4>
+                <p><a href="">2016年7月 ＞</a></p>
+                <p><a href="">2016年8月 ＞</a></p>
+                <p><a href="">2016年9月 ＞</a></p>
+                <p><a href="">2016年10月 ＞</a></p>
+                <p><a href="">新着情報一覧 ＞</a></p>
+                
+            </div>
+            
+            <div class="baner">
+            	<a href=""><img src="baner01.png" width="174px"></a>
+            </div>
+            <div class="baner">
+            	<a href=""><img src="baner02.png" width="174px"></a>
+            </div>
+            <div class="baner">
+            	<a href=""><img src="baner03.png" width="174px"></a>
+            </div>
+        </div>
+    </div>
+
+	<div id="footer">Copyright ©HARUYOSHI TRADING ALL RIGHT RESERVED.</div>
+    
+</div>
+
+</body>
+
+</html>
